@@ -14,3 +14,40 @@ vim.opt.smartindent = true   -- Makes indenting smart
 
 -- Sign column (always show)
 vim.opt.signcolumn = 'yes'
+
+vim.api.nvim_create_augroup("FileTypeIndent", {})
+vim.api.nvim_create_autocmd("FileType", {
+  group = "FileTypeIndent",
+  pattern = "python",
+  command = "setlocal tabstop=4 shiftwidth=4 expandtab",
+})
+vim.api.nvim_create_autocmd("FileType", {
+  group = "FileTypeIndent",
+  pattern = "javascript",
+  command = "setlocal tabstop=2 shiftwidth=2 expandtab",
+})
+vim.api.nvim_create_autocmd("FileType", {
+  group = "FileTypeIndent",
+  pattern = "html",
+  command = "setlocal tabstop=2 shiftwidth=2 expandtab",
+})
+vim.api.nvim_create_autocmd("FileType", {
+  group = "FileTypeIndent",
+  pattern = "css",
+  command = "setlocal tabstop=2 shiftwidth=2 expandtab",
+})
+vim.api.nvim_create_autocmd("FileType", {
+  group = "FileTypeIndent",
+  pattern = "typescript",
+  command = "setlocal tabstop=2 shiftwidth=2 expandtab",
+})
+vim.api.nvim_create_autocmd("FileType", {
+  group = "FileTypeIndent",
+  pattern = "tsx",
+  command = "setlocal tabstop=2 shiftwidth=2 expandtab",
+})
+vim.api.nvim_create_autocmd("FileType", {
+  group = "FileTypeIndent",
+  pattern = "go",
+  command = "setlocal tabstop=4 shiftwidth=4 noexpandtab",
+})
