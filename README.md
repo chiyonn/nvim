@@ -1,4 +1,9 @@
 
+### このレポジトリのクローン
+```bash
+git clone https://github.com/chiyonn/nvim.git ~/.config/nvim
+```
+
 ### プラグインマネージャーのインストール
 ```bash
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
