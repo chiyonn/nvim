@@ -10,6 +10,12 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
+### Install Plugins
+in nvim
+```
+:PackerInstall
+```
+
 ### Goのインストール
 goplsはGo自体がインストールされていないと機能しないっぽい
 for Ubuntu24
