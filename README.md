@@ -16,11 +16,6 @@ in nvim
 :PackerInstall
 ```
 
-### Goのインストール
-goplsはGo自体がインストールされていないと機能しないっぽい
-for Ubuntu24
-```bash
-sudo apt update -y
-sudo apt install golang-go
-```
+### dependency
+- npm: for typescript-language-server
 
