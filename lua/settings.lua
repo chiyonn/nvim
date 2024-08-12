@@ -11,7 +11,8 @@ vim.cmd [[highlight ColorColumn ctermbg=grey guibg=#808080]]
 vim.opt.scrolloff = 7
 
 -- Clipboard
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard:append('unnamedplus')
+
 
 -- Tab and indentation settings
 vim.opt.expandtab = true     -- Use spaces instead of tabs
