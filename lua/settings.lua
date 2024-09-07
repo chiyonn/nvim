@@ -5,6 +5,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Appearance
+vim.opt.nowrap = true
 vim.opt.colorcolumn = "81"
 vim.cmd('syntax enable')
 vim.opt.background = 'dark'
