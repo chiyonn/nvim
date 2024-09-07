@@ -6,7 +6,9 @@ vim.opt.relativenumber = true
 
 -- Appearance
 vim.opt.colorcolumn = "81"
-vim.cmd [[highlight ColorColumn ctermbg=grey guibg=#808080]]
+vim.cmd('syntax enable')
+vim.opt.background = 'dark'
+vim.cmd('colorscheme default')
 
 vim.opt.scrolloff = 7
 
@@ -48,3 +50,4 @@ end
 
 -- 検索履歴とコマンド履歴の保存
 vim.opt.viminfo = "'100,<1000,s10,h"
+
