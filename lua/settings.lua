@@ -9,7 +9,7 @@ vim.opt.wrap = false
 vim.opt.colorcolumn = "81"
 vim.cmd('syntax enable')
 vim.opt.background = 'dark'
-vim.cmd('colorscheme default')
+vim.cmd('colorscheme github_dark')
 
 vim.opt.scrolloff = 7
 

@@ -22,4 +22,7 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind.nvim'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
+
+  -- Theme plugins
+  use 'projekt0n/github-nvim-theme'
 end)
