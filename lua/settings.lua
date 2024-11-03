@@ -16,7 +16,6 @@ vim.opt.scrolloff = 7
 -- Clipboard
 vim.opt.clipboard:append('unnamedplus')
 
-
 -- Tab and indentation settings
 vim.opt.expandtab = true     -- Use spaces instead of tabs
 vim.opt.shiftwidth = 2       -- Number of spaces to use for each step of (auto)indent
@@ -30,13 +29,18 @@ vim.opt.signcolumn = 'yes'
 vim.api.nvim_create_augroup("FileTypeIndent", {})
 vim.api.nvim_create_autocmd("FileType", {
   group = "FileTypeIndent",
-  pattern = "python,go",
+  pattern = "python",
   command = "setlocal tabstop=4 shiftwidth=4 expandtab",
 })
 vim.api.nvim_create_autocmd("FileType", {
   group = "FileTypeIndent",
   pattern = "go",
-  command = "setlocal noexpandtab",
+  command = "setlocal tabstop=4 shiftwidth=4 noexpandtab",
+})
+vim.api.nvim_create_autocmd("FileType", {
+  group = "FileTypeIndent",
+  pattern = "html",  -- ここは必要に応じて調整してください
+  command = "setlocal tabstop=4 shiftwidth=4 noexpandtab",
 })
 
 -- コマンド履歴の保存
@@ -51,4 +55,3 @@ end
 
 -- 検索履歴とコマンド履歴の保存
 vim.opt.viminfo = "'100,<1000,s10,h"
-

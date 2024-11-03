@@ -25,4 +25,10 @@ return require('packer').startup(function(use)
 
   -- Theme plugins
   use 'projekt0n/github-nvim-theme'
+
+  -- Viewer
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
 end)
