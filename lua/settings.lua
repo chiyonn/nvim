@@ -65,3 +65,12 @@ if vim.fn.has("persistent_undo") == 1 then
     vim.opt.undofile = true
 end
 vim.opt.viminfo = "'100,<1000,s10,h"
+
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.py",
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
+})
+
