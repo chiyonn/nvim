@@ -13,3 +13,8 @@ masonは今のところ、使用見送り中なので
     ```zsh
     npm install -g pyright
     ```
+
+- lua-language-serverを使用
+    ```zsh
+    sudo pacman -S lua-language-server
+    ```
