@@ -1,6 +1,7 @@
 {
   "alpha-nvim": { "branch": "main", "commit": "de72250e054e5e691b9736ee30db72c65d560771" },
-  "lazy.nvim": { "branch": "main", "commit": "7967abe55752aa90532e6bb4bd4663fe27a264cb" },
+  "bufferline.nvim": { "branch": "main", "commit": "5cc447cb2b463cb499c82eaeabbed4f5fa6a0a44" },
+  "lazy.nvim": { "branch": "main", "commit": "56ead98e05bb37a4ec28930a54d836d033cf00f2" },
   "none-ls.nvim": { "branch": "main", "commit": "1f2bf17eddfdd45aed254b6922c6c68b933dba9e" },
   "nvim-lspconfig": { "branch": "master", "commit": "ac936a66fba9a58613bed95d7615cff2c5bf0387" },
   "nvim-tree.lua": { "branch": "master", "commit": "1f3ffd6af145af2a4930a61c50f763264922c3fe" },
