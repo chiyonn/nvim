@@ -17,7 +17,7 @@ return {
     })
 
     -- バッファの移動用キーマッピングを設定
-    vim.keymap.set("n", "J", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
-    vim.keymap.set("n", "K", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+    vim.keymap.set("n", "H", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+    vim.keymap.set("n", "L", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
   end,
 }
