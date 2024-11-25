@@ -18,3 +18,9 @@ masonは今のところ、使用見送り中なので
     ```zsh
     sudo pacman -S lua-language-server
     ```
+
+**フォーマット用コマンド**
+- python
+    ```zsh
+    yay -S python-black python-isort
+    ```
