@@ -7,7 +7,7 @@ return {
     lspconfig.pyright.setup({})
 
     -- TypeScript/JavaScript 用 (tsserver)
-    lspconfig.tsserver.setup({})
+    lspconfig.ts_ls.setup({})
 
     -- Lua 用 (lua_ls)
     lspconfig.lua_ls.setup({
