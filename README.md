@@ -19,8 +19,18 @@ masonは今のところ、使用見送り中なので
     sudo pacman -S lua-language-server
     ```
 
+- prettierを使用
+    ```zsh
+    npm install -g prettier
+    ```
+
 **フォーマット用コマンド**
 - python
     ```zsh
     yay -S python-black python-isort
+    ```
+
+- jinja2
+    ```zsh
+    yay -S python-djlint python-djhtml
     ```
