@@ -1,4 +1,3 @@
--- Minimal Telescope setup with <leader>f keybinding
 return {
   'nvim-telescope/telescope.nvim',
   dependencies = { 'nvim-lua/plenary.nvim' }, -- Required dependency
@@ -14,7 +13,13 @@ return {
       },
     })
 
-    -- Keymap for <leader>f to open Telescope find_files
-    vim.keymap.set('n', '<leader>f', builtin.find_files, { desc = "Telescope Find Files" })
+    -- Keymaps for Telescope
+    local keymap_opts = { desc = "Telescope", noremap = true, silent = true }
+
+    -- <leader>ff: Find files in the current project
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, vim.tbl_extend('force', keymap_opts, { desc = "Telescope Find Files" }))
+
+    -- <leader>fw: Search for a string in the current project
+    vim.keymap.set('n', '<leader>fw', builtin.live_grep, vim.tbl_extend('force', keymap_opts, { desc = "Telescope Live Grep" }))
   end
 }
