@@ -34,3 +34,10 @@ masonは今のところ、使用見送り中なので
     ```zsh
     yay -S python-djlint python-djhtml
     ```
+
+
+**検索用コマンド**
+- ripgrep
+    ```zsh
+    sudo pacman -S ripgrep
+    ```
