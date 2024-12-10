@@ -35,7 +35,7 @@ return {
         -- TypeScript/JavaScript (React) の整形ツール
         none_ls.builtins.formatting.prettier.with({
           filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" }, -- React/TypeScript 用
-          extra_args = { "--print-width", "80", "--single-quote", "--jsx-single-quote" }, -- プリティア設定
+          extra_args = { "--print-width", "80", "--single-quote", "--jsx-single-quote", "--tab-width", "4" }, -- プリティア設定にタブ幅を追加
         }),
       },
     })
