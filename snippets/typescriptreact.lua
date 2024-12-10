@@ -15,7 +15,7 @@ ls.add_snippets("typescriptreact", {
     t({".module.css';"}), t({"", ""}),
     t({"", "const "}),
     i(1, "ComponentName"), -- コンポーネント名を一箇所で定義
-    t({" = (): React.ReactElement => {"}),
+    t({" = () => {"}),
     t({"", "  return ("}),
     t({"", "    <div className={styles."}),
     i(2, "container"), -- CSSクラス名
