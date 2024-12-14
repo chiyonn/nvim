@@ -1,4 +1,3 @@
--- nvim-tree configuration for lazy.nvim
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = { "nvim-tree/nvim-web-devicons" }, -- Optional for file icons
@@ -23,7 +22,8 @@ return {
         enable = true,
       },
       filters = {
-        dotfiles = true,
+        dotfiles = true, -- 隠しファイルを非表示
+        custom = { "__pycache__" }, -- __pycache__ を非表示
       },
     })
 
