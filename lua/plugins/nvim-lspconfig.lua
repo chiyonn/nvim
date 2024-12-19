@@ -22,8 +22,8 @@ return {
       on_attach = on_attach,
     })
 
-    -- TypeScript/JavaScript 用 (tsserver)
-    lspconfig.tsserver.setup({
+    -- TypeScript/JavaScript 用
+    lspconfig.ts_ls.setup({
       on_attach = on_attach,
     })
 
