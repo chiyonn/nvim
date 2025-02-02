@@ -1,5 +1,5 @@
--- Enable syntax highlighting
 vim.cmd("syntax on")
+vim.cmd("colorscheme murphy")
 
 -- Encoding settings
 local encoding = "utf-8"
@@ -68,9 +68,8 @@ vim.opt.viminfo = "'100,<1000,s10,h"
 
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.py",
-  callback = function()
-    vim.lsp.buf.format({ async = false })
-  end,
+    pattern = "*.py",
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+    end,
 })
-
