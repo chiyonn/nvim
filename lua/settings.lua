@@ -1,5 +1,5 @@
 vim.cmd("syntax on")
-vim.cmd("colorscheme murphy")
+vim.cmd("colorscheme slate")
 
 -- Encoding settings
 local encoding = "utf-8"
