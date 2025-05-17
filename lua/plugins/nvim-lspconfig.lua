@@ -3,9 +3,7 @@ return {
   config = function()
     local lspconfig = require("lspconfig")
 
-    -- 保存時にフォーマットを実行する共通の on_attach 関数
     local function on_attach(client, bufnr)
-      -- フォーマット機能が有効な場合のみ設定
       if client.server_capabilities.documentFormattingProvider then
         vim.api.nvim_create_autocmd("BufWritePre", {
           group = vim.api.nvim_create_augroup("FormatOnSave", { clear = true }),
@@ -15,6 +13,12 @@ return {
           end,
         })
       end
+
+      local opts = { buffer = bufnr, silent = true }
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+      vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     end
 
     -- Python 用 (pyright)
