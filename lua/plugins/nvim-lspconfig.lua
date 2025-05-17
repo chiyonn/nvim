@@ -21,48 +21,48 @@ return {
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     end
 
-    -- Python 用 (pyright)
+    -- Python
     lspconfig.pyright.setup({
       on_attach = on_attach,
     })
 
-    -- TypeScript/JavaScript 用
+    -- TypeScript/JavaScript
     lspconfig.ts_ls.setup({
       on_attach = on_attach,
     })
 
-    -- Lua 用 (lua_ls)
+    -- Lua
     lspconfig.lua_ls.setup({
       on_attach = on_attach,
       settings = {
         Lua = {
           runtime = {
-            version = "LuaJIT", -- Neovim で使用されている Lua のバージョン
+            version = "LuaJIT",
           },
           diagnostics = {
-            globals = { "vim" }, -- Neovim API を認識させる
+            globals = { "vim" },
           },
           workspace = {
-            library = vim.api.nvim_get_runtime_file("", true), -- Neovim の Lua API を使用
-            checkThirdParty = false, -- サードパーティのコードチェックを無効化（必要に応じて）
+            library = vim.api.nvim_get_runtime_file("", true),
+            checkThirdParty = false,
           },
           telemetry = {
-            enable = false, -- 適宜、テレメトリを無効化
+            enable = false,
           },
         },
       },
     })
 
-    -- Go 用 (gopls)
+    -- Go
     lspconfig.gopls.setup({
       on_attach = on_attach,
       settings = {
         gopls = {
-          gofumpt = true, -- gofumpt によるフォーマットを有効化
+          gofumpt = true,
           analyses = {
-            unusedparams = true, -- 未使用パラメータの警告を有効化
+            unusedparams = true,
           },
-          staticcheck = true, -- staticcheck を有効化
+          staticcheck = true,
         },
       },
     })
