@@ -4,6 +4,14 @@ return {
         "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
+        vim.diagnostic.config({
+            virtual_text = true,
+            signs = true,
+            underline = true,
+            update_in_insert = true,
+            severity_sort = true,
+        })
+
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
