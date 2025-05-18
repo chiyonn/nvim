@@ -1,7 +1,13 @@
 return {
     "neovim/nvim-lspconfig",
+    dependencies = {
+        "hrsh7th/cmp-nvim-lsp",
+    },
     config = function()
         local lspconfig = require("lspconfig")
+        local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+        local capabilities = cmp_nvim_lsp.default_capabilities()
 
         local function on_attach(client, bufnr)
             if client.server_capabilities.documentFormattingProvider then
@@ -24,16 +30,19 @@ return {
         -- Python
         lspconfig.pyright.setup({
             on_attach = on_attach,
+            capabilities = capabilities,
         })
 
         -- TypeScript/JavaScript
         lspconfig.ts_ls.setup({
             on_attach = on_attach,
+            capabilities = capabilities,
         })
 
         -- Lua
         lspconfig.lua_ls.setup({
             on_attach = on_attach,
+            capabilities = capabilities,
             settings = {
                 Lua = {
                     runtime = {
@@ -56,6 +65,7 @@ return {
         -- Go
         lspconfig.gopls.setup({
             on_attach = on_attach,
+            capabilities = capabilities,
             settings = {
                 gopls = {
                     gofumpt = true,
@@ -63,6 +73,23 @@ return {
                         unusedparams = true,
                     },
                     staticcheck = true,
+                },
+            },
+        })
+
+        -- CSS
+        lspconfig.cssls.setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {
+                css = {
+                    validate = true,
+                },
+                scss = {
+                    validate = true,
+                },
+                less = {
+                    validate = true,
                 },
             },
         })
