@@ -2,8 +2,8 @@ return {
     "olimorris/codecompanion.nvim",
     keys = {
         {
-            "<Leader>cc",
-            ":CodeCompanionChat<CR>",
+            "<Leader>c",
+            ":CodeCompanionChat Toggle<CR>",
             mode = { "n", "v" },
             silent = true,
         },
