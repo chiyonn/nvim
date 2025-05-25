@@ -34,7 +34,7 @@ return {
 
     --@type Ollama.Config
     opts = {
-        model = "qwen3:32b",
+        model = "codellama:13b",
         url = "http://192.168.40.100:11434",
     }
 }
