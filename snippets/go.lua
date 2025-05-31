@@ -5,11 +5,19 @@ local i = ls.insert_node
 
 ls.add_snippets("go", {
     s(
-        "errnil",
+        "errnew",
         {
-            t({"if err != nil {", "\t"}),
-            t("return nil, err"),
-            t({"", "}"}),
+            t("return nil, errors.New(\""),
+            i(1),
+            t("\")"),
+        }
+    ),
+    s(
+        "errf",
+        {
+            t("return nil, fmt.Errorf(\""),
+            i(1),
+            t("\")"),
         }
     ),
 })
