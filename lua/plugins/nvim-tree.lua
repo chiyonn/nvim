@@ -6,7 +6,7 @@ return {
     require("nvim-tree").setup({
       view = {
         width = 30,
-        side = "right",
+        side = "left",
       },
       renderer = {
         icons = {
@@ -22,7 +22,7 @@ return {
         enable = true,
       },
       filters = {
-        dotfiles = true, -- 隠しファイルを非表示
+        dotfiles = true,            -- 隠しファイルを非表示
         custom = { "__pycache__" }, -- __pycache__ を非表示
       },
     })
