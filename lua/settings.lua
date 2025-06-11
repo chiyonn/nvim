@@ -25,8 +25,8 @@ vim.opt.hlsearch = true
 vim.opt.ignorecase = false
 
 -- Tab and indentation settings
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 
@@ -70,5 +70,15 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.py",
     callback = function()
         vim.lsp.buf.format({ async = false })
+    end,
+})
+
+-- Pythonだけ4スペースに上書き
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "python",
+    callback = function()
+        vim.bo.tabstop = 4
+        vim.bo.shiftwidth = 4
+        vim.bo.expandtab = true
     end,
 })
