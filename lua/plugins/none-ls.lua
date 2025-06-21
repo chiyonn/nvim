@@ -24,15 +24,15 @@ return {
       },
     })
 
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = vim.api.nvim_create_augroup("AutoFormatNoneLS", { clear = true }),
-      pattern = { "*.go", "*.py", "*.html", "*.jinja", "*.jinja2", "*.css", "*.scss", "*.less", "*.ts", "*.tsx", "*.js", "*.jsx" },
-      callback = function()
-        vim.lsp.buf.format({
-          async = false,
-          filter = function(client) return client.name == "null-ls" end,
-        })
-      end,
-    })
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    group = vim.api.nvim_create_augroup("AutoFormatTSLS", { clear = true }),
+    pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" },
+    callback = function()
+      vim.lsp.buf.format({
+        async = false,
+        filter = function(client) return client.name == "ts_ls" end,
+      })
+    end,
+  })
   end,
 }
