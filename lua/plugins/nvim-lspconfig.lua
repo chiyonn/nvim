@@ -20,13 +20,16 @@ return {
     -- Format on save if server supports it
     local function setup_format_on_save(client, bufnr)
       if client.name == "gopls" and client.server_capabilities.documentFormattingProvider then
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          group = vim.api.nvim_create_augroup("GoFormatOnSave", { clear = true }),
-          buffer = bufnr,
-          callback = function()
-            vim.lsp.buf.format({ async = false })
-          end,
-        })
+          vim.api.nvim_create_autocmd("BufWritePre", {
+              group = vim.api.nvim_create_augroup("GoFormatOnSave", { clear = true }),
+              buffer = bufnr,
+              callback = function()
+                  vim.lsp.buf.format({
+                      async = false,
+                      filter = function(c) return c.name == "gopls" end,
+                  })
+              end,
+          })
       end
     end
 
