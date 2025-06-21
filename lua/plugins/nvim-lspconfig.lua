@@ -6,7 +6,6 @@ return {
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-    -- Diagnostic UI settings
     vim.diagnostic.config({
       virtual_text = true,
       signs = true,
@@ -17,25 +16,10 @@ return {
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    -- Format on save if server supports it
-    local function setup_format_on_save(client, bufnr)
-      if client.name == "gopls" and client.server_capabilities.documentFormattingProvider then
-          vim.api.nvim_create_autocmd("BufWritePre", {
-              group = vim.api.nvim_create_augroup("GoFormatOnSave", { clear = true }),
-              buffer = bufnr,
-              callback = function()
-                  vim.lsp.buf.format({
-                      async = false,
-                      filter = function(c) return c.name == "gopls" end,
-                  })
-              end,
-          })
-      end
-    end
-
-    -- LSP attach handler
     local function on_attach(client, bufnr)
-      setup_format_on_save(client, bufnr)
+      if client.name == "gopls" then
+        client.server_capabilities.documentFormattingProvider = false
+      end
 
       local opts = { buffer = bufnr, silent = true }
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -44,7 +28,6 @@ return {
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     end
 
-    -- Language servers
     local servers = {
       pyright = {},
       ts_ls = {},
