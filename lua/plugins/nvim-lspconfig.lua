@@ -44,7 +44,7 @@ return {
     -- Language servers
     local servers = {
       pyright = {},
-      tsserver = {},
+      ts_ls = {},
       lua_ls = {
         settings = {
           Lua = {
