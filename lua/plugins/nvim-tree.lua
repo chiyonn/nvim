@@ -20,6 +20,7 @@ return {
       },
       git = {
         enable = true,
+        ignore = false,
       },
       filters = {
         dotfiles = true,            -- 隠しファイルを非表示
