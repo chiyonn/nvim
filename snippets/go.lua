@@ -6,26 +6,6 @@ local rep = require("luasnip.extras").rep
 local fmt = require("luasnip.extras.fmt").fmt
 
 ls.add_snippets("go", {
-  s(
-    "errnew",
-    {
-      t("return nil, errors.New(\""),
-      i(1),
-      t("\")"),
-    }
-  ),
-  s(
-    "errf",
-    {
-      t("return nil, fmt.Errorf(\""),
-      i(1),
-      t("\")"),
-    }
-  ),
-})
-
-
-ls.add_snippets("go", {
   s("new", fmt([[
         type {} struct {{
             {}
