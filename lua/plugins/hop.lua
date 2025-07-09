@@ -2,7 +2,7 @@ return {
     "smoka7/hop.nvim",
     version = "*",
     opts = {
-        keys = "etovxqpdygfblzhckisuran",
+        keys = "sadfjklewcmpgh",
         jump_on_sole_occurrence = true,
     },
     config = function(_, opts)
