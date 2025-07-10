@@ -7,14 +7,14 @@ local fmt = require("luasnip.extras.fmt").fmt
 
 ls.add_snippets("go", {
   s("new", fmt([[
-        type {} struct {{
-            {}
-        }}
+type {} struct {{
+  {}
+}}
 
-        func New{}() *{} {{
-            return &{}{{}}
-        }}
-    ]], {
+func New{}() *{} {{
+  return &{}{{}}
+}}
+  ]], {
     i(1, "MyType"),    -- オブジェクト名にカーソルが当たる
     i(2, "// fields"), -- フィールド
     rep(1),            -- 関数名の NewXxx にも同じ名前を使用
