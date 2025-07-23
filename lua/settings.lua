@@ -43,7 +43,7 @@ vim.opt.pumblend = 5
 vim.opt.background = "dark"
 
 -- Shell settings
-vim.opt.shell = "/bin/zsh"
+vim.opt.shell = "/bin/bash"
 
 -- NOTE:
 -- サブディレクトリも再帰的に検索可能。
