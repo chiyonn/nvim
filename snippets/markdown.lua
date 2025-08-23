@@ -46,6 +46,13 @@ ls.add_snippets("markdown", {
     f(function()
       return os.date("%Y-%m-%d")
     end, {})
+  }),
+
+  -- Frontmatter snippet
+  s("/frontmatter", {
+    t({"---", ""}),
+    i(1),
+    t({"", "---"})
   })
 })
 
