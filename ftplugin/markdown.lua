@@ -9,7 +9,7 @@ if require("zk.util").notebook_root(vim.fn.expand('%:p')) ~= nil then
   local opts = { noremap=true, silent=false }
 
   -- Open the link under the caret.
-  map("n", "<C-CR>", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
   -- Create a new note after asking for its title.
   map("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", opts)
