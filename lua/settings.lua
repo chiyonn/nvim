@@ -42,6 +42,10 @@ vim.opt.wildoptions = "pum"
 vim.opt.pumblend = 5
 vim.opt.background = "dark"
 
+-- Concealment settings for markdown links
+vim.opt.conceallevel = 2
+vim.opt.concealcursor = ""
+
 -- Shell settings
 vim.opt.shell = "/bin/zsh"
 

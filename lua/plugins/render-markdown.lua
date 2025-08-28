@@ -27,6 +27,25 @@ return {
             },
             conceal = true,
             auto_enable = true,
+            -- Wikilink configuration
+            link = {
+                enabled = true,
+                wiki = {
+                    icon = '󰌹 ',  -- Icon displayed for wikilinks
+                    highlight = 'RenderMarkdownWikiLink',  -- Highlight group for wikilinks
+                },
+            },
+            -- Window options for concealment
+            win_options = {
+                conceallevel = {
+                    default = vim.o.conceallevel,
+                    rendered = 3,  -- Maximum concealment when rendered
+                },
+                concealcursor = {
+                    default = vim.o.concealcursor,
+                    rendered = '',  -- Show concealed text in all modes
+                },
+            },
         })
     end,
 }

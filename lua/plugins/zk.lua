@@ -20,6 +20,12 @@ return {
         auto_attach = {
           enabled = true,
         },
+
+        -- Add buffer-specific keymaps for zk-managed buffers
+        on_attach = function(client, bufnr)
+          local opts = { buffer = bufnr, silent = true }
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+        end,
       },
     })
   end,
