@@ -13,4 +13,5 @@ map.set('n', '!', ':q!<CR>', options)
 
 map.set('v', '>', '>gv', options)
 map.set('v', '<', '<gv', options)
+map.set('v', 'T', [[:s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g<CR>]], options)
 
