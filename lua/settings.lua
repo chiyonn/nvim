@@ -86,3 +86,12 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.bo.expandtab = true
     end,
 })
+
+-- 空のバッファのデフォルトファイルタイプをmarkdownに設定
+vim.api.nvim_create_autocmd("BufEnter", {
+    callback = function()
+        if vim.bo.filetype == "" and vim.fn.expand("%") == "" then
+            vim.bo.filetype = "markdown"
+        end
+    end,
+})
