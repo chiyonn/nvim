@@ -12,9 +12,9 @@ if require("zk.util").notebook_root(vim.fn.expand('%:p')) ~= nil then
   map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
   -- Create a new note after asking for its title.
-  map("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", opts)
-  map("v", "<leader>znt", ":'<,'>ZkNewFromTitleSelection<CR>", opts)
-  map("v", "<leader>znc", ":'<,'>ZkNewFromContentSelection { title = vim.fn.input('Title: ') }<CR>", opts)
+  map("n", "<leader>zn", "<Cmd>ZkNew { dir = 'notes', title = vim.fn.input('Title: ') }<CR>", opts)
+  map("v", "<leader>znt", ":'<,'>ZkNewFromTitleSelection { dir = 'notes' }<CR>", opts)
+  map("v", "<leader>znc", ":'<,'>ZkNewFromContentSelection { dir = 'notes', title = vim.fn.input('Title: ') }<CR>", opts)
 
   -- Preview a linked note.
   map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
