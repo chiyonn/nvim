@@ -17,8 +17,15 @@ vim.opt.smartindent = true
 vim.opt.breakindent = true
 vim.opt.backup = false
 vim.opt.swapfile = false
+vim.opt.writebackup = false
+vim.opt.updatetime = 2000
+vim.opt.autowrite = false
+vim.opt.autoread = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.signcolumn = "yes"
+
+-- SMBファイルシステム向け設定
+vim.opt.fsync = true
 
 -- Search behavior
 vim.opt.hlsearch = true
@@ -93,5 +100,16 @@ vim.api.nvim_create_autocmd("BufEnter", {
         if vim.bo.filetype == "" and vim.fn.expand("%") == "" then
             vim.bo.filetype = "markdown"
         end
+    end,
+})
+
+-- SMBファイルシステム向けの特別な設定
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "/Volumes/notes/*",
+    callback = function()
+        -- ファイル変更検知の頻度を下げる
+        vim.opt_local.updatetime = 3000
+        -- 外部変更を無視
+        vim.opt_local.autoread = false
     end,
 })
