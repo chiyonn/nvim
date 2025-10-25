@@ -1,9 +1,10 @@
 
+-- Leader key configuration
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.cmd([[filetype plugin indent on]])
-
-require('settings')
-require('keymaps')
+-- Load core configuration
+require('core.options')
+require('core.keymaps')
+require('config.autocmds')
 require('config.lazy')
