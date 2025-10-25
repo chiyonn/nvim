@@ -13,7 +13,7 @@ return {
             },
             -- インストールする言語パーサー
             ensure_installed = {
-                "lua", "javascript", "typescript", "python", "html", "css", "bash", "json",
+                "lua", "javascript", "typescript", "python", "html", "css", "bash", "json", "hcl",
             },
             -- 未インストールのパーサーを自動インストール
             auto_install = true,

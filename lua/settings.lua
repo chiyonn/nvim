@@ -103,6 +103,14 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end,
 })
 
+-- Nomadファイルの自動検出
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = {"*.nomad", "*.nomad.hcl"},
+    callback = function()
+        vim.bo.filetype = "hcl"
+    end,
+})
+
 -- SMBファイルシステム向けの特別な設定
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     pattern = "/Volumes/notes/*",
