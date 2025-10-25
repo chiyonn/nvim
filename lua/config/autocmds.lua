@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end,
 })
 
--- Python-specific indentation settings
+-- Python-specific indentation settings (4 spaces instead of default 2)
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "python",
     callback = function()

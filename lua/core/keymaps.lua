@@ -15,3 +15,15 @@ map.set('v', '>', '>gv', options)
 map.set('v', '<', '<gv', options)
 map.set('v', 'T', [[:s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g<CR>]], options)
 
+-- LSP keymaps (applied when LSP attaches to buffer)
+local function setup_lsp_keymaps(bufnr)
+    local opts = { buffer = bufnr, silent = true }
+    map.set("n", "gd", vim.lsp.buf.definition, opts)
+    map.set("n", "gr", vim.lsp.buf.references, opts)
+    map.set("n", "K", vim.lsp.buf.hover, opts)
+    map.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+end
+
+-- Export function for use in LSP configuration
+_G.setup_lsp_keymaps = setup_lsp_keymaps
+

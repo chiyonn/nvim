@@ -21,11 +21,10 @@ return {
         client.server_capabilities.documentFormattingProvider = false
       end
 
-      local opts = { buffer = bufnr, silent = true }
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-      vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+      -- Setup LSP keymaps (defined in core/keymaps.lua)
+      if _G.setup_lsp_keymaps then
+        _G.setup_lsp_keymaps(bufnr)
+      end
     end
 
     local servers = {

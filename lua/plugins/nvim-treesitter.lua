@@ -3,19 +3,19 @@ return {
     build = ":TSUpdate",
     config = function()
         require("nvim-treesitter.configs").setup({
-            -- 有効化するモジュール
+            -- Enable Tree-sitter modules
             highlight = {
-                enable = true, -- Tree-sitter によるハイライトを有効化
+                enable = true, -- Enable Tree-sitter syntax highlighting
                 additional_vim_regex_highlighting = false,
             },
             indent = {
-                enable = true, -- Tree-sitter ベースのインデントを有効化
+                enable = true, -- Enable Tree-sitter based indentation
             },
-            -- インストールする言語パーサー
+            -- Language parsers to install
             ensure_installed = {
                 "lua", "javascript", "typescript", "python", "html", "css", "bash", "json", "hcl",
             },
-            -- 未インストールのパーサーを自動インストール
+            -- Auto install missing parsers
             auto_install = true,
         })
     end,
