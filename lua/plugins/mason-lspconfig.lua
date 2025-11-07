@@ -8,6 +8,7 @@ return {
             "ts_ls",
             "gopls",
             "cssls",
+            "ruby_lsp",
         },
         automatic_installation = true,
     },

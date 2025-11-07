@@ -59,6 +59,7 @@ return {
           less = { validate = true },
         },
       },
+      ruby_lsp = {},
     }
 
     for name, config in pairs(servers) do
