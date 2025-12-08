@@ -4,11 +4,11 @@ return {
     config = function()
         require("mason").setup()
         require("mason-lspconfig").setup({
+            -- gopls is installed via `go install` (mise manages go)
             ensure_installed = {
                 "lua_ls",
                 "pyright",
                 "ts_ls",
-                "gopls",
                 "cssls",
                 "ruby_lsp",
             },

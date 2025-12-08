@@ -15,6 +15,14 @@ mise install
 - `go` - gopls に必要
 - `ruby` - ruby-lsp に必要
 
+### gopls のインストール
+
+MasonではなくGoで直接インストールする:
+
+```bash
+go install golang.org/x/tools/gopls@latest
+```
+
 ### Ruby ビルドが失敗する場合
 
 OpenSSL等のビルド依存パッケージが不足している可能性があります:
@@ -30,4 +38,4 @@ mise install ruby
 
 1. `mise list` で必要なツールがインストールされているか確認
 2. nvim内で `:MasonLog` を実行してエラーを確認
-3. 手動インストール: `:MasonInstall pyright typescript-language-server gopls css-lsp ruby-lsp`
+3. 手動インストール: `:MasonInstall pyright typescript-language-server css-lsp ruby-lsp`
