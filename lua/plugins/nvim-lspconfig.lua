@@ -30,61 +30,48 @@ return {
       end
     end
 
-    -- Server configurations using vim.lsp.config (Neovim 0.11+)
-    vim.lsp.config("pyright", {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    vim.lsp.config("ts_ls", {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    vim.lsp.config("lua_ls", {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = {
-        Lua = {
-          runtime = { version = "LuaJIT" },
-          diagnostics = { globals = { "vim" } },
-          workspace = {
-            library = vim.api.nvim_get_runtime_file("", true),
-            checkThirdParty = false,
+    local servers = {
+      pyright = {},
+      ts_ls = {},
+      lua_ls = {
+        settings = {
+          Lua = {
+            runtime = { version = "LuaJIT" },
+            diagnostics = { globals = { "vim" } },
+            workspace = {
+              library = vim.api.nvim_get_runtime_file("", true),
+              checkThirdParty = false,
+            },
+            telemetry = { enable = false },
           },
-          telemetry = { enable = false },
         },
       },
-    })
-
-    vim.lsp.config("gopls", {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = {
-        gopls = {
-          gofumpt = true,
-          analyses = { unusedparams = true },
-          staticcheck = true,
+      gopls = {
+        settings = {
+          gopls = {
+            gofumpt = true,
+            analyses = { unusedparams = true },
+            staticcheck = true,
+          },
         },
       },
-    })
-
-    vim.lsp.config("cssls", {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = {
-        css = { validate = true },
-        scss = { validate = true },
-        less = { validate = true },
+      cssls = {
+        settings = {
+          css = { validate = true },
+          scss = { validate = true },
+          less = { validate = true },
+        },
       },
-    })
+      ruby_lsp = {},
+    }
 
-    vim.lsp.config("ruby_lsp", {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+    -- Configure and enable LSP servers using vim.lsp.config (Neovim 0.11+)
+    for name, config in pairs(servers) do
+      config.on_attach = on_attach
+      config.capabilities = capabilities
+      vim.lsp.config(name, config)
+    end
 
-    -- Enable configured servers
-    vim.lsp.enable({ "pyright", "ts_ls", "lua_ls", "gopls", "cssls", "ruby_lsp" })
+    vim.lsp.enable(vim.tbl_keys(servers))
   end,
 }

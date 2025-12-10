@@ -1,3 +1,5 @@
+-- Add mise shims to PATH for Mason
+vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
 
 -- Leader key configuration
 vim.g.mapleader = ' '
