@@ -13,3 +13,9 @@ require('core.options')
 require('core.keymaps')
 require('config.autocmds')
 require('config.lazy')
+
+-- Load colorscheme from ~/.config/nvim/theme (one line: colorscheme name)
+local theme_file = vim.fn.stdpath("config") .. "/theme"
+local ok, lines = pcall(vim.fn.readfile, theme_file)
+local colorscheme = (ok and lines[1] and lines[1] ~= "") and lines[1] or "carbonfox"
+vim.cmd("colorscheme " .. colorscheme)
