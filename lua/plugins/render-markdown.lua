@@ -17,6 +17,15 @@ return {
             enabled = true,
             wiki = {
                 icon = "󰌹 ",
+                body = function(ctx)
+                    -- [[link|alias]] 形式ならaliasをそのまま表示
+                    if ctx.alias then return ctx.alias end
+                    -- alias無しの場合はパスを整形
+                    local dest = ctx.destination or ""
+                    dest = dest:gsub("^.*/", "")
+                    dest = dest:gsub("%-", " ")
+                    return dest
+                end,
                 highlight = "RenderMarkdownWikiLink",
             },
         },
